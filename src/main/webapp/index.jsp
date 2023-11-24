@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Welcome to Time-Travel GeoGiggly Quizt!</h1>
-    <form action="/MP5Session/gameplayServlet" method="POST">
+    <form action="/MP5Session/GameplayServlet" method="POST">
         <label for="username">Declare forth your Giggly Gamertag:</label> <input type="text" id="username" name="username" required>
         <br>
         <button type="submit">Go!</button>
