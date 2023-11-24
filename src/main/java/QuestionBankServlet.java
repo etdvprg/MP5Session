@@ -12,9 +12,7 @@ public class QuestionBankServlet extends HttpServlet {
     @Override
     public void init() {
         qBank = new QuestionBank();
-        
-        qBank.addQuestion(new Question("Which country neighbors Kazakhstan to the north?", Arrays.asList("Russia", "Tajikistan", "China", "Mongolia"), 0), "Easy");
-        
+                
     }
     
 

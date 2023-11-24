@@ -4,11 +4,13 @@ public class Question {
     private String quest;
     private List<String> solutions;
     private int correctSolIndex;
+    private int difficulty;
     
-    public Question(String quest, List<String> solutions, int correctSolIndex) {
+    public Question(String quest, List<String> solutions, int correctSolIndex, int difficulty) {
        this.quest = quest;
        this.solutions = solutions;
        this.correctSolIndex = correctSolIndex;
+       this.difficulty = difficulty;
    }
 
     /**
@@ -30,5 +32,12 @@ public class Question {
      */
     public int getCorrectSolIndex() {
         return correctSolIndex;
+    }
+
+    /**
+     * @return the difficulty
+     */
+    public int getDifficulty() {
+        return difficulty;
     }
 }
