@@ -4,10 +4,6 @@
         <servlet-name>GameplayServlet</servlet-name>
         <servlet-class>GameplayServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>QuestionBankServlet</servlet-name>
-        <servlet-class>QuestionBankServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>GameplayServlet</servlet-name>
         <url-pattern>/GameplayServlet</url-pattern>
