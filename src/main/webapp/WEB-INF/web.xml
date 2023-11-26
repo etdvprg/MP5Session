@@ -12,11 +12,6 @@
         <servlet-name>GameplayServlet</servlet-name>
         <url-pattern>/GameplayServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>QuestionBankServlet</servlet-name>
-        <url-pattern>/QuestionBankServlet</url-pattern>
-    </servlet-mapping>
-    <session-config>
         <session-timeout>
             30
         </session-timeout>
