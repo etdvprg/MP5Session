@@ -2,16 +2,16 @@ import java.util.List;
 
 public class Question {
     private String quest;
-    private List<String> solutions;
+    private List<String> possibleAnswers;
     private int correctSolIndex;
-    private int difficulty;
+    private Difficulty difficulty;
     
-    public Question(String quest, List<String> solutions, int correctSolIndex, int difficulty) {
-       this.quest = quest;
-       this.solutions = solutions;
-       this.correctSolIndex = correctSolIndex;
-       this.difficulty = difficulty;
-   }
+    public Question (String quest, List<String> possibleAnswers, int correctSolIndex, Difficulty difficulty) {
+        this.quest = quest;
+        this.possibleAnswers = possibleAnswers;
+        this.correctSolIndex = correctSolIndex;
+        this.difficulty = difficulty;
+    }
 
     /**
      * @return the quest
@@ -21,10 +21,10 @@ public class Question {
     }
 
     /**
-     * @return the solutions
+     * @return the possibleAnswers
      */
-    public List<String> getSolutions() {
-        return solutions;
+    public List<String> getPossibleAnswers() {
+        return possibleAnswers;
     }
 
     /**
@@ -37,7 +37,12 @@ public class Question {
     /**
      * @return the difficulty
      */
-    public int getDifficulty() {
+    public Difficulty getDifficulty() {
         return difficulty;
     }
+    
+    public boolean verifyAnswer(int userAnswerIndex) {
+        return this.correctSolIndex == userAnswerIndex;
+    }
+    
 }
