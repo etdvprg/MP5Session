@@ -2,13 +2,13 @@ import java.util.List;
 
 public class Question {
     private String quest;
-    private List<String> possibleAnswers;
+    private List<String> solutions;
     private int correctSolIndex;
     private Difficulty difficulty;
     
     public Question (String quest, List<String> possibleAnswers, int correctSolIndex, Difficulty difficulty) {
         this.quest = quest;
-        this.possibleAnswers = possibleAnswers;
+        this.solutions = possibleAnswers;
         this.correctSolIndex = correctSolIndex;
         this.difficulty = difficulty;
     }
@@ -24,7 +24,7 @@ public class Question {
      * @return the possibleAnswers
      */
     public List<String> getPossibleAnswers() {
-        return possibleAnswers;
+        return solutions;
     }
 
     /**
