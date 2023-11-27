@@ -1,27 +1,43 @@
 package com;
+
 public class Player {
 
     private String username;
     private int score;
     private long timer;
     private boolean gameStatus;
+    private int questionNumber;
 
     public Player(String username) {
         this.username = username;
         this.score = 0;
         this.timer = System.currentTimeMillis();
-        this.gameStatus = false;
+        this.gameStatus = true;
+        this.questionNumber = 0;
     }
 
-    public void answerQuestion(String answer, Question question) {
+    public void answerQuestion(int answerIndex, Question question) {
         long elapsedTime = System.currentTimeMillis() - this.timer;
-
-        this.score += 1000 / elapsedTime;
         this.timer = System.currentTimeMillis();
 
-        //if answer is false, then gameStatus = true;
+        if (answerIndex == question.getCorrectSolIndex()) {
+            this.score += 10000 / elapsedTime;
+            this.questionNumber++;
+        } else {
+            this.gameStatus = false;
+        }
     }
-    
-    //more methods to come
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    public int getScore() {
+        return this.score;
+    }
+
+    public boolean isGameStatus() {
+        return gameStatus;
+    }
 
 }
