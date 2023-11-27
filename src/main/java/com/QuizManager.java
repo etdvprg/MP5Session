@@ -36,7 +36,6 @@ public class QuizManager {
         }
     }
 
-    public Quiz createQuiz() {
         public Quiz createQuiz() {
         List<Question> randomizedQuestionSet = new ArrayList<Question>();
 
@@ -53,8 +52,6 @@ public class QuizManager {
         if (difficultQuestions.size() >= 4) {
             randomizedQuestionSet.addAll(difficultQuestions.subList(0, 4));
         }
-
         return new Quiz(randomizedQuestionSet);
-    }
     }
 }
