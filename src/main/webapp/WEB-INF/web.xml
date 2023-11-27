@@ -3,12 +3,16 @@
     <servlet>
         <servlet-name>AuthenticationServlet</servlet-name>
         <servlet-class>com.AuthenticationServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>QuizInitServlet</servlet-name>
         <servlet-class>com.QuizInitServlet</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>QuestionBank</servlet-name>
+        <servlet-class>com.QuestionBank</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AuthenticationServlet</servlet-name>
         <url-pattern>/AuthenticationServlet</url-pattern>
@@ -17,7 +21,10 @@
         <servlet-name>QuizInitServlet</servlet-name>
         <url-pattern>/QuizInitServlet</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>QuestionBank</servlet-name>
+        <url-pattern>/QuestionBank</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
