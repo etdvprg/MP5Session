@@ -20,5 +20,6 @@ public class AuthenticationServlet extends HttpServlet {
             session.setAttribute("player", player);
             response.sendRedirect("/MP5Session/ready.jsp");
         }
+        
     }
 }

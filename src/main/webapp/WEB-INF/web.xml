@@ -3,27 +3,36 @@
     <servlet>
         <servlet-name>AuthenticationServlet</servlet-name>
         <servlet-class>com.AuthenticationServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>QuizInitServlet</servlet-name>
         <servlet-class>com.QuizInitServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>QuestionBank</servlet-name>
         <servlet-class>com.QuestionBank</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>QuizServlet</servlet-name>
+        <servlet-class>com.QuizServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AuthenticationServlet</servlet-name>
-        <url-pattern>/AuthenticationServlet</url-pattern>
+        <url-pattern>/com/AuthenticationServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>QuizInitServlet</servlet-name>
-        <url-pattern>/QuizInitServlet</url-pattern>
+        <url-pattern>/com/QuizInitServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>QuestionBank</servlet-name>
-        <url-pattern>/QuestionBank</url-pattern>
+        <url-pattern>/com/QuestionBank</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizServlet</servlet-name>
+        <url-pattern>/com/QuizServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

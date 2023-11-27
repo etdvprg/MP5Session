@@ -19,6 +19,6 @@ public class QuizInitServlet extends HttpServlet {
 
         session.setAttribute("quiz", quiz);
 
-        response.sendRedirect("/gshowd/gameshow.jsp");
+        response.sendRedirect("/MP5Session/gameshow.jsp");
     }
 }
