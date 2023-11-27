@@ -1,3 +1,4 @@
+package com;
 public class Player {
 
     private String username;

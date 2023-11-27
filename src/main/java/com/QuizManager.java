@@ -1,3 +1,4 @@
+package com;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -36,16 +37,24 @@ public class QuizManager {
     }
 
     public Quiz createQuiz() {
+        public Quiz createQuiz() {
         List<Question> randomizedQuestionSet = new ArrayList<Question>();
 
         Collections.shuffle(easyQuestions);
         Collections.shuffle(intermediateQuestions);
         Collections.shuffle(difficultQuestions);
 
-        randomizedQuestionSet.addAll(easyQuestions.subList(0, 3));
-        randomizedQuestionSet.addAll(intermediateQuestions.subList(0, 3));
-        randomizedQuestionSet.addAll(difficultQuestions.subList(0, 4));
+        if (easyQuestions.size() >= 3) {
+            randomizedQuestionSet.addAll(easyQuestions.subList(0, 3));
+        }
+        if (intermediateQuestions.size() >= 3) {
+            randomizedQuestionSet.addAll(intermediateQuestions.subList(0, 3));
+        }
+        if (difficultQuestions.size() >= 4) {
+            randomizedQuestionSet.addAll(difficultQuestions.subList(0, 4));
+        }
 
         return new Quiz(randomizedQuestionSet);
+    }
     }
 }
