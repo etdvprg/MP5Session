@@ -4,10 +4,18 @@
         <servlet-name>AuthenticationServlet</servlet-name>
         <servlet-class>com.AuthenticationServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QuizInitServlet</servlet-name>
+        <servlet-class>com.QuizInitServlet</servlet-class>
+    </servlet>
     
     <servlet-mapping>
         <servlet-name>AuthenticationServlet</servlet-name>
         <url-pattern>/AuthenticationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizInitServlet</servlet-name>
+        <url-pattern>/QuizInitServlet</url-pattern>
     </servlet-mapping>
     
     <session-config>
