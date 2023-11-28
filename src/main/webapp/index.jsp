@@ -19,7 +19,10 @@
             <button type="submit">Go!</button>
         </form>
         <br>
-        <a href="/gametime/leaderboard.jsp">View Leaderboard</a>
+        
+        <form action="/MP5Session/com/LeaderboardServlet" method="POST">
+            <button type="submit">View Leaderboard</button>
+        </form>
     </body>
 </html>
 

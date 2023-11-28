@@ -18,6 +18,10 @@
         <servlet-name>QuizServlet</servlet-name>
         <servlet-class>com.QuizServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LeaderboardServlet</servlet-name>
+        <servlet-class>com.LeaderboardServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AuthenticationServlet</servlet-name>
         <url-pattern>/com/AuthenticationServlet</url-pattern>
@@ -33,6 +37,10 @@
     <servlet-mapping>
         <servlet-name>QuizServlet</servlet-name>
         <url-pattern>/com/QuizServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LeaderboardServlet</servlet-name>
+        <url-pattern>/com/LeaderboardServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

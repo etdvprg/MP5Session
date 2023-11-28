@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>:o u lost xD</h1>
-        <h2>Your score:  ${player.score} !</h2> <br>
+        <h2>Your score: ${player.score}</h2> <br>
 
         <h2> View the Leaderboard! </h2> <br>
         <a href="/MP5Session/leaderboard.jsp"><button name="toLeaderboards">Leaderboards</button></a>
