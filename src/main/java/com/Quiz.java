@@ -15,7 +15,7 @@ public class Quiz {
     }
     
     public boolean isQuizComplete() {
-        return currentQuestionIndex > questions.size(); //could be 9 if hard-coded
+        return currentQuestionIndex == questions.size() - 1; 
     }
     
     public void nextQuestion() {
