@@ -21,6 +21,10 @@
     <servlet>
         <servlet-name>LeaderboardServlet</servlet-name>
         <servlet-class>com.LeaderboardServlet</servlet-class>
+        <init-param>
+            <param-name>admin</param-name>
+            <param-value>sudo</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>AuthenticationServlet</servlet-name>

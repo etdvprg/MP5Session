@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class LeaderboardServlet extends HttpServlet {
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -19,20 +19,41 @@ public class LeaderboardServlet extends HttpServlet {
         if (session.getAttribute("leaderboard") == null) {
             session.setAttribute("leaderboard", new Leaderboard());
         }
-        
+
+        // Set the authenticated attribute to false by default
+        session.setAttribute("authenticated", false);
+
         response.sendRedirect("/MP5Session/leaderboard.jsp");
     }
 
-    /*@Override
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         HttpSession session = request.getSession();
 
         if (session.getAttribute("leaderboard") == null) {
             session.setAttribute("leaderboard", new Leaderboard());
         }
 
-        response.sendRedirect("/MP5Session/leaderboard.jsp");
-    } */
+        String secretUsername = getServletConfig().getInitParameter("admin");
+        String submittedUsername = request.getParameter("secretUsername");
 
+        if (submittedUsername != null && submittedUsername.equals(secretUsername)) {
+            // Set the authenticated attribute to true
+            session.setAttribute("authenticated", true);
+            response.sendRedirect("/MP5Session/leaderboard.jsp");
+        } else {
+            // get the selected player from the request
+            String selectedPlayer = request.getParameter("selectedPlayers");
+            if (selectedPlayer != null) {
+                Leaderboard leaderboard = (Leaderboard) session.getAttribute("leaderboard");
+                leaderboard.deletePlayer(selectedPlayer);
+                response.sendRedirect("/MP5Session/leaderboard.jsp");
+            } else {
+                session.invalidate();
+                response.sendRedirect("/MP5Session/index.jsp");
+            }
+        }
+    }
 }

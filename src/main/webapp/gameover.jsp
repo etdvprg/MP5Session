@@ -14,9 +14,10 @@
     <body>
         <h1>:o u lost xD</h1>
         <h2>Your score: ${player.score}</h2> <br>
-
-        <h2> View the Leaderboard! </h2> <br>
-        <a href="/MP5Session/leaderboard.jsp"><button name="toLeaderboards">Leaderboards</button></a>
+        
+        <form action="/MP5Session/com/LeaderboardServlet" method="GET">
+            <button type="submit">View Leaderboard</button>
+        </form>
 
         <h2> Return to the homepage! </h2>
         <a href="/MP5Session/index.jsp"><button name="toIndex">Return</button></a>
