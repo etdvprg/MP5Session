@@ -20,7 +20,7 @@
         </form>
         <br>
         
-        <form action="/MP5Session/com/LeaderboardServlet" method="POST">
+        <form action="/MP5Session/com/LeaderboardServlet" method="GET">
             <button type="submit">View Leaderboard</button>
         </form>
     </body>
