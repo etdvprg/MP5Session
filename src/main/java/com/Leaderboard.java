@@ -22,4 +22,9 @@ public class Leaderboard {
     public List<Player> getLeaderboardPlayers() {
         return new ArrayList<>(players);
     }
+    
+    public void deletePlayer(String username) {
+        players.removeIf(p -> p.getUsername().equals(username));
+    }
+   
 }
