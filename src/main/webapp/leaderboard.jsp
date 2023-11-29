@@ -22,6 +22,8 @@
         <%
             }
         %>
+        
+        <a href="/MP5Session/index.jsp"><button type="submit">Return</button></a>
     </body>
 
 </html>
