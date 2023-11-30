@@ -6,7 +6,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Game Time!</title>
-        <link rel="stylesheet" href= "/MP5Session/css/global.css" />
+        <link rel="stylesheet" href= "/MP5Session/css/index.css" />
         <link rel="stylesheet" href= "/MP5Session/css/game.css" />
     </head>
     <body>
