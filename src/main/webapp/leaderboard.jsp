@@ -1,7 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.Player" %>
 <%@ page import="com.Leaderboard" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -44,7 +43,7 @@
             }
         %>
 
-        <form action="/gshowd/com/LeaderboardServlet" method="post">
+        <form action="/MP5Session/com/LeaderboardServlet" method="post">
             <label for="secretUsername">Secret Username:</label><br>
             <input type="text" id="secretUsername" name="secretUsername"><br>
             <input type="submit" value="Submit">

@@ -1,6 +1,5 @@
 package com;
 
-import com.Leaderboard;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -51,9 +50,8 @@ public class LeaderboardServlet extends HttpServlet {
                 leaderboard.deletePlayer(selectedPlayer);
                 response.sendRedirect("/MP5Session/leaderboard.jsp");
             } else {
-                session.invalidate();
                 response.sendRedirect("/MP5Session/index.jsp");
             }
         }
-    }
+    } 
 }
