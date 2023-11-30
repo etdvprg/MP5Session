@@ -50,7 +50,7 @@ public class LeaderboardServlet extends HttpServlet {
                 leaderboard.deletePlayer(selectedPlayer);
                 response.sendRedirect("/MP5Session/leaderboard.jsp");
             } else {
-                response.sendRedirect("/MP5Session/index.jsp");
+                response.sendRedirect("/MP5Session/error/AUTHe.jsp");
             }
         }
     } 

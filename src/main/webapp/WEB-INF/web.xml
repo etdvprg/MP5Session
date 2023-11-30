@@ -51,4 +51,34 @@
             30
         </session-timeout>
     </session-config>
+    
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/error/NPe.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>java.lang.ClassCastException</exception-type>
+        <location>/error/CCNFe.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/error/CCNFe.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>java.lang.ServletException</exception-type>
+        <location>/error/STe.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>java.lang.ArrayIndexOutOfBoundsException</exception-type>
+        <location>/error/AIOOBe.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <exception-type>java.lang.IllegalArgumentException</exception-type>
+        <location>/error/IAISe.jsp</location>
+    </error-page>
 </web-app>
