@@ -9,20 +9,30 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href= "/MP5Session/css/index.css" />
         <title>Time-Travel GeoGiggly Quizt</title>
     </head>
     <body>
-        <h1>Welcome to Time-Travel GeoGiggly Quizt!</h1>
-        <form action="/MP5Session/com/AuthenticationServlet" method="POST">
-            <label for="username">Declare forth your Giggly Gamertag:</label> <input type="text" id="username" name="username" required>
-            <br>
-            <button type="submit">Go!</button>
-        </form>
-        <br>
-        
-        <form action="/MP5Session/com/LeaderboardServlet" method="GET">
-            <button type="submit">View Leaderboard</button>
-        </form>
+        <div class="wrapper">
+            <header class="header"><h1>Time-travel Geogiggle Quizt!</h1></header>
+            <div class="log-form">
+                <div class="enter-game">
+                    <form action="/MP5Session/com/AuthenticationServlet" method="POST">
+                        <label for="username">Declare forth your Gamertag</label>
+                        <br>
+                        <input type="text" class ="input-username" id="username" name="username" required>
+                        <br>
+                        <button class="go-game" type="submit">Go!</button>
+                    </form>
+                        <br>
+                </div>
+                <div class="leaderboards">
+                    <form action="/MP5Session/com/LeaderboardServlet" method="GET">
+                        <button class="go-leaderboard" type="submit">Leaderboard</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
 
