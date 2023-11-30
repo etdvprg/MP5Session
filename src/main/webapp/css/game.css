@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper {
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+}
+
+.player-info {
+    margin-bottom: 20px;
+}
+
+.quiz-question {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.quiz-choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+    text-align: center;
+}
+
+.go-choices {
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid transparent; 
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: #121212;
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1 1 auto;
+    font-family: Inter,sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: border-color .2s; 
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.go-choices:hover {
+    border-color: #693275;
+}
+
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
