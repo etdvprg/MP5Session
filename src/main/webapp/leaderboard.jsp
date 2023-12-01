@@ -47,13 +47,23 @@
                         %>
                     </table>
                 </div>
-                <div class="admin-box">
-                    <form action="/MP5Session/com/LeaderboardServlet" method="post">
+                
+                <div class="admin">
+                    <form action="/MP5Session/com/AdminServlet" method="GET">
+                        <button class="go-admin" type="submit">Admin!</button>
+                    </form>
+                </div>
+                
+                    
+                <!--                <div class="admin-box">
+                    <form action="/MP5Session/com/AdminServlet" method="post">
                         <label for="secretUsername">Secret Username:</label><br>
                         <input type="text" id="secretUsername" name="secretUsername"><br>
                         <input type="submit" value="Submit">
                     </form>
                 </div>
+                
+                -->
 
                 <div class="return">
                     <a href="/MP5Session/index.jsp"><button class="go-return">Return to Homepage!</button></a>

@@ -2,6 +2,7 @@ package com;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,5 +22,13 @@ public class AuthenticationServlet extends HttpServlet {
             response.sendRedirect("/MP5Session/ready.jsp");
         }
         
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.setAttribute("authenticated", false);
+        response.sendRedirect("/MP5Session/leaderboard.jsp");
     }
 }
