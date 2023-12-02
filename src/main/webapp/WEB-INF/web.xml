@@ -21,6 +21,10 @@
     <servlet>
         <servlet-name>LeaderboardServlet</servlet-name>
         <servlet-class>com.LeaderboardServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.AdminServlet</servlet-class>
         <init-param>
             <param-name>admin</param-name>
             <param-value>sudo</param-value>
@@ -45,6 +49,10 @@
     <servlet-mapping>
         <servlet-name>LeaderboardServlet</servlet-name>
         <url-pattern>/com/LeaderboardServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/com/AdminServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
