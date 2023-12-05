@@ -21,7 +21,7 @@ public class Player {
         this.timer = System.currentTimeMillis();
 
         if (answerIndex == question.getCorrectSolIndex()) {
-            this.score += 10000 / elapsedTime;
+            this.setScore((int) (this.score + 10000 / elapsedTime));
             this.questionNumber++;
         } else {
             this.gameStatus = false;
@@ -39,5 +39,11 @@ public class Player {
     public boolean isGameStatus() {
         return gameStatus;
     }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+    
+    
 
 }
