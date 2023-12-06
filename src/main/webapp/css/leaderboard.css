@@ -37,6 +37,7 @@ body::before {
     flex-direction: column;
     align-items: center;
     border-radius: 0.5rem;
+    z-index: 2;
 }
 .leaderboard-form h1 {
     font-family: "Rubik", sans-serif;
@@ -59,6 +60,10 @@ body::before {
     overflow-x: hidden;
 }
 
+.relative-div {
+    position: relative;
+}
+
 tr {
     color: #000;
     transition: all 0.2s ease-in-out;
@@ -73,8 +78,11 @@ tr:first-child {
 }
 
 tr:nth-child(n+2):hover {
-    background-color: #fff;
-    transform: scale(1.1);
+    -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb;
+    box-shadow: 0px 5px 15px 8px #e4e7fb;
+}
+
+tr:not(:first-child):hover {
     -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb;
     box-shadow: 0px 5px 15px 8px #e4e7fb;
 }
@@ -85,13 +93,6 @@ tr:nth-child(2n+3) {
 
 tr:nth-child(2n+4) {
     background-color: #fff;
-}
-
-tr:not(:first-child):hover {
-    background-color: #fff;
-    transform: scale(1.1);
-    -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb;
-    box-shadow: 0px 5px 15px 8px #e4e7fb;
 }
 
 td {

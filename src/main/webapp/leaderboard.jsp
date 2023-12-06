@@ -10,6 +10,7 @@
         <title>Leaderboard</title>
     </head>
     <body>
+        <main>
         <div class="wrapper">
             <div class="leaderboard-form">
                 <header class="leaderboard-header">Leaderboard</header>
@@ -37,10 +38,16 @@
                         <%
                         } else {
                         %>
-                        <tr>
-                            <td class="name"><%= player.getUsername()%></td>
-                            <td class="points"><%= player.getScore()%></td>
-                        </tr>
+                        <div class="tr-wrap">
+                            <tr>
+                                <td class="name">
+                                   <%= player.getUsername()%>
+                                </td>
+                                <td class="points_delete">
+                                   <%= player.getScore()%>
+                                </td>
+                            </tr>
+                        </div>
                         <%
                                 }
                             }
@@ -53,22 +60,12 @@
                         <button class="go-admin" type="submit">Admin!</button>
                     </form>
                 </div>
-                
-                    
-                <!--                <div class="admin-box">
-                    <form action="/MP5Session/com/AdminServlet" method="post">
-                        <label for="secretUsername">Secret Username:</label><br>
-                        <input type="text" id="secretUsername" name="secretUsername"><br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
-                
-                -->
 
                 <div class="return">
                     <a href="/MP5Session/index.jsp"><button class="go-return">Return to Homepage!</button></a>
                 </div>
             </div>
         </div>
+        </main>
     </body>
 </html>
