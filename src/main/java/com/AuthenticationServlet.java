@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +20,12 @@ public class AuthenticationServlet extends HttpServlet {
         if (username != null) {
             Player player = new Player(username);
             session.setAttribute("player", player);
-            response.sendRedirect("/MP5Session/ready.jsp");
+            
+            Cookie sessionCookie = new Cookie("sessionCookie", session.getId());
+            sessionCookie.setMaxAge(60 * 60 * 24 * 7); // expires in 7 days
+            response.addCookie(sessionCookie);
+         
+            response.sendRedirect("/MP5Session/ready.jsp");   
         }
         
     }

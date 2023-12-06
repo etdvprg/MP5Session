@@ -1,4 +1,5 @@
 package com;
+import java.util.Arrays;
 import java.util.List;
 
 public class Quiz {
@@ -11,14 +12,23 @@ public class Quiz {
     }
     
     public Question getQuestion() {
-        return questions.get(currentQuestionIndex);
+        return questions.get(getCurrentQuestionIndex());
     }
     
     public boolean isQuizComplete() {
-        return currentQuestionIndex == questions.size() - 1; 
+        return getCurrentQuestionIndex() == questions.size() - 1; 
     }
     
     public void nextQuestion() {
         currentQuestionIndex++;
     }
+
+    public int getCurrentQuestionIndex() {
+        return currentQuestionIndex;
+    }
+    
+    public List<Question> getQuiz() {
+        return questions;
+    }
+
 }
