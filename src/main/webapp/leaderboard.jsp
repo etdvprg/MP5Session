@@ -37,19 +37,11 @@
                 </div>
                 
                 <div class="leaderboard-buttons">
-                    <div class="go-btn">
-                        <div class="admin">
                             <form action="/MP5Session/com/AdminServlet" method="GET">
                                 <button class="go-admin" type="submit">Admin!</button>
                             </form>
-                        </div>
-                    </div>
 
-                    <div class="go-btn">
-                        <div class="return">
                             <a href="/MP5Session/index.jsp"><button class="go-return">Return to Homepage!</button></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

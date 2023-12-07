@@ -89,4 +89,11 @@
         <exception-type>java.lang.IllegalArgumentException</exception-type>
         <location>/error/IAISe.jsp</location>
     </error-page>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404e.jsp</location>
+    </error-page>
+    
+    
 </web-app>

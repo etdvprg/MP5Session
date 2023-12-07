@@ -30,6 +30,7 @@
                     <tr>
                         <td><%= player.getUsername()%></td>
                         <td><%= player.getScore()%></td>
+                        <td><%= player.getTmp()%></td>
                         <td>
                             <form action="/MP5Session/com/LeaderboardServlet" method="POST">
                                 <input type="hidden" name="selectedPlayers" value="<%= player.getUsername()%>">

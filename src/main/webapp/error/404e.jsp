@@ -1,3 +1,4 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,14 +10,14 @@
     <body>
         <div class='wrapper'>
             <div class='message-box'>
-                
-                <span class="text-header"><h1>Casting or Parsing Error!</h1></span>
+
+                <span class="text-header"><h1>Not Found Error</h1></span>
                 <br>
                 <span class="message">
-                    Possible Errors: Some object was not casted properly to a class, or a number was not parsed properly.
+                    Possible Errors: The web application did not load completely, or a path to a resource cannot be found.
                 </span>
                 <br>
-                
+
                 <button class="return"><a href="/MP5Session/index.jsp">Return!</a></button>
             </div>  
         </div>  
