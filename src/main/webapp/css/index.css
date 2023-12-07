@@ -53,6 +53,28 @@ body::before {
     -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
+.log-form-mechanics {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.log-form-mechanics {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
 .enter-game {
     margin-bottom: 20px;
 }
@@ -67,7 +89,7 @@ body::before {
     padding: 0 20px;
     min-width: 160px;
     height: 50px;
-    background-color: #FFD700;
+    background-color: #A799B7;
     border-radius: 10px;
     font-size: 18px;
     font-weight: 400;
@@ -164,5 +186,9 @@ body::before {
     margin: 0;
     margin-top: 10px; 
     margin-bottom: 10px;
+}
+
+.user {
+    font-weight: bold;
 }
 

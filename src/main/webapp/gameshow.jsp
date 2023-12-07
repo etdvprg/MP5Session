@@ -33,7 +33,7 @@
         <div class="wrapper">
             <div class="quiz-form">
                 <div class="player-info">
-                    <h2>Player: ${player.username}! </h2>
+                    <h2>Player: ${player.username} </h2>
                     <h2>Score: ${player.score} </h2>
                 </div>
                 <%

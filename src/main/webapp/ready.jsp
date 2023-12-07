@@ -8,11 +8,12 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="log-form">
+            <div class="log-form-mechanics">
                 <header class="mechanics-header">Mechanics</header>
                     <div class="mechanics-info">
-                    Here are the technicalities of the quiz, ${player.username}
+                        Here are the technicalities of the quiz, <div class="user">${player.username}</div>
                     <ul>
+                        <br>
                         <li>
                             There are 10 questions of varying difficulty. 
                         </li>
@@ -23,9 +24,10 @@
                             Scores are dependent on the time of completion of the game.  
                         </li>
                         <li>
-                            The leaderboard works on a first-come first-serve basis, but beatable
+                            The leaderboard works on a first-come first-serve basis, but beatable <br>
                             as long as you wage against the top scores of the previous players. 
                         </li>      
+                        <br>
                     </ul>
                     </div>
                 <form action="/MP5Session/com/QuizInitServlet" method="POST">

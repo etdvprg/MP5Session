@@ -74,6 +74,8 @@ h2 {
 }
 
 .quiz-form {
+    min-height: 500px;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
