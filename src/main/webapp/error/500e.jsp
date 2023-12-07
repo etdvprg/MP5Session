@@ -10,13 +10,12 @@
         <div class='wrapper'>
             <div class='message-box'>
 
-                <span class="text-header"><h1>Not Found Error</h1></span>
+                <span class="text-header"><h1>Internal Server Error</h1></span>
                 <br>
                 <span class="message">
-                    Possible Errors: The web application did not load completely, or a path to a resource cannot be found.
+                    Possible Errors: Something bad happened in the server, causing anomalies for the web application.
                 </span>
                 <br>
-
                 <button class="return"><a href="/MP5Session/index.jsp">Return!</a></button>
             </div>  
         </div>  

@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Source Code Pro');
 
+html {
+    filter: grayscale(100%);
+}
 
 body {
     margin: 0;
     padding: 0;
-    background-image: url('/MP5Session/image/img-10.jpg');
+    background-image: url('/MP5Session/image/img-7.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     overflow: hidden;
-    filter: grayscale(100%);
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -31,43 +33,44 @@ body::before {
     justify-content: center;
     height: 80vh;
     margin: 100px;
-    backdrop-filter: blur(1px);
-    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 1em;
 }
 
+
 .return {
-    background-color: #FFFFFF;
-    border: 0;
-    border-radius: .5rem;
-    box-sizing: border-box;
-    color: #111827;
-    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    font-size: .875rem;
-    font-weight: 600;
-    line-height: 1.25rem;
-    padding: .75rem 1rem;
-    text-align: center;
-    text-decoration: none #D1D5DB solid;
-    text-decoration-thickness: auto;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #FFF;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 675;
+    box-shadow: 0 10px 20px 0px rgba(75, 35, 84, 0.5);
+    -moz-box-shadow: 0 10px 30px 0px rgba(75, 35, 84, 0.5);
+    -webkit-box-shadow: 0 10px 30px 0px rgba(75, 35, 84, 0.5);
+    -o-box-shadow: 0 10px 30px 0px rgba(75, 35, 84, 0.5);
+    -ms-box-shadow: 0 10px 30px 0px rgba(75, 35, 84, 0.5);
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    border: none;
     cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
 }
 
 .return:hover {
-    background-color: rgb(249,250,251);
-}
-
-.return:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-}
-
-.return:focus-visible {
-    box-shadow: none;
+    background-color: #d9d9d9;
+    color: #fff !important;
+    box-shadow: 0 10px 20px 0px rgba(75, 35, 84, 0.8);
+    -moz-box-shadow: 0 10px 30px 0px rgba(75, 35, 84, 0.8);
+    -webkit-box-shadow: 0 10px 30px 0px rgba(75, 35, 84, 0.8);
+    -o-box-shadow: 0 10px 30px 0px rgba(75, 35, 84, 0.8);
+    -ms-box-shadow: 0 10px 30px 0px rgba(75, 35, 84, 0.8), rgb(249,250,251);
 }
 
 .message-box {
@@ -102,6 +105,7 @@ a:hover {
 }
 
 .message {
+   padding: 10px;
    color: #000;
    font-size: 18px;
    font-family: 'Source Code Pro';
