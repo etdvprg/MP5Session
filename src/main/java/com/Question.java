@@ -1,7 +1,8 @@
 package com;
+import java.io.Serializable;
 import java.util.List;
 
-public class Question {
+public class Question implements Serializable {
     private String quest;
     private List<String> solutions;
     private int correctSolIndex;
@@ -14,30 +15,19 @@ public class Question {
         this.difficulty = difficulty;
     }
 
-    /**
-     * @return the quest
-     */
     public String getQuest() {
         return quest;
     }
 
-    /**
-     * @return the possibleAnswers
-     */
     public List<String> getPossibleAnswers() {
         return solutions;
     }
 
-    /**
-     * @return the correctSolIndex
-     */
     public int getCorrectSolIndex() {
         return correctSolIndex;
     }
 
-    /**
-     * @return the difficulty
-     */
+
     public Difficulty getDifficulty() {
         return difficulty;
     }
@@ -45,5 +35,5 @@ public class Question {
     public boolean verifyAnswer(int userAnswerIndex) {
         return this.correctSolIndex == userAnswerIndex;
     }
-    
+ 
 }

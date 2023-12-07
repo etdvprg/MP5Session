@@ -20,14 +20,16 @@ public class AuthenticationServlet extends HttpServlet {
         if (username != null) {
             Player player = new Player(username);
             session.setAttribute("player", player);
+            Cookie sessionCookie = new Cookie("sessionCookie", "user_online: " + player.getUsername());
+            sessionCookie.setHttpOnly(false);
+            sessionCookie.setPath("/");
+            sessionCookie.setMaxAge(60 * 60 * 24);
+  
             
-            Cookie sessionCookie = new Cookie("sessionCookie", session.getId());
-            sessionCookie.setMaxAge(60 * 60 * 24 * 7); // expires in 7 days
             response.addCookie(sessionCookie);
-         
             response.sendRedirect("/MP5Session/ready.jsp");   
         }
-        
+
     }
     
     @Override

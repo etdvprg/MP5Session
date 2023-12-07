@@ -1,9 +1,19 @@
 package com;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -17,16 +27,6 @@ public class QuizServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("sessionCookie")) {
-                loadGameProgress(request, session);
-            } else {
-                response.sendRedirect("MP5Session/index.jsp");
-            }
-        }
-        
 
         if (session.getAttribute("leaderboard") == null) {
             session.setAttribute("leaderboard", new Leaderboard());
@@ -43,47 +43,62 @@ public class QuizServlet extends HttpServlet {
 
         player.answerQuestion(userAnswerIndex, currentQuestion);
         session.setAttribute("player", player);
+        session.setAttribute("quiz", quiz);
+        
         saveGameProgress(player, quiz, response);
+
 
         if (currentQuestion.verifyAnswer(userAnswerIndex) == false) {
             leaderboard.addPlayer(player);
+            deleteGameProgress(request, response);
             response.sendRedirect("/MP5Session/gameover.jsp");
         } else if (quiz.isQuizComplete()) {
             leaderboard.addPlayer(player);
+            deleteGameProgress(request, response);
             response.sendRedirect("/MP5Session/gameon.jsp");
-            deleteGameProgress(response);
+            
         } else {
             quiz.nextQuestion();
+            session.setAttribute("player", player);
+            session.setAttribute("quiz", quiz);
+            saveGameProgress(player, quiz, response);
             response.sendRedirect("/MP5Session/gameshow.jsp");
-        } 
+        }
+        
     }
+
     
-    private void saveGameProgress(Player player, Quiz quiz, HttpServletResponse response) {
-        String gameProgress = player.getUsername() + "," + player.getScore() + "," + player.isGameStatus()
-               + player.getQuestionNumber() + "," + quiz.getCurrentQuestionIndex() + quiz.getQuiz();
-        Cookie gameProgressCookie = new Cookie ("gameProgress", gameProgress);
+    private void saveGameProgress(Player player, Quiz quiz, HttpServletResponse response) throws IOException {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bos);
+        oos.writeObject(quiz);
+        String quizSerialized = Base64.getEncoder().encodeToString(bos.toByteArray());
+
+        String gameProgress = player.getUsername() + "," + player.getScore() + "," + player.isGameStatus() + ","
+                + player.getQuestionNumber() + "," + (quiz.getCurrentQuestionIndex()+1) + "," + quizSerialized;
+
+        Cookie gameProgressCookie = new Cookie("gameProgressCookie", gameProgress);
+        gameProgressCookie.setHttpOnly(false);
+        gameProgressCookie.setPath("/");
         gameProgressCookie.setMaxAge(60 * 60 * 24);
         response.addCookie(gameProgressCookie);
     }
-    
-    private void loadGameProgress(HttpServletRequest request, HttpSession session) {
-        Cookie[] loadCookies = request.getCookies();
-        if (loadCookies != null) {
-            for (Cookie cookie : loadCookies) {
-                String gameProgress = cookie.getValue();
-                String[] gameStates = gameProgress.split(":");
-                Player player = new Player(gameStates[0], Integer.parseInt(gameStates[1]), Boolean.parseBoolean(gameStates[2]), Integer.parseInt(gameStates[3]), Long.parseLong(gameStates[4]));
-//                Quiz quiz = new Quiz(Integer.parseInt(gameStates[5]));
-//                session.setAttribute("player", player);
-//                session.setAttribute("quiz", quiz);
+
+    private void deleteGameProgress(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("sessionCookie") || cookie.getName().equals("gameProgressCookie")) {
+                    cookie.setValue("");
+                    cookie.setPath("/");
+                    cookie.setMaxAge(0);
+                    
+                    response.addCookie(cookie);
+                    System.out.println("Successfully deleted cookie: " + cookie.getName());
+                } else {
+                    System.out.println("No cookie detected, cookie unmatched.");
+                }
             }
         }
     }
-    
-    private void deleteGameProgress(HttpServletResponse response) {
-        Cookie gameProgressCookie = new Cookie("gameProgress", "");
-        gameProgressCookie.setMaxAge(0);
-        response.addCookie(gameProgressCookie);
-    }
- 
 }

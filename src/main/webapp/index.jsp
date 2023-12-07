@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Nov 24, 2023, 1:39:29 PM
-    Author     : EnceT
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

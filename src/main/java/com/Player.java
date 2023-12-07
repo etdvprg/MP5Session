@@ -21,15 +21,25 @@ public class Player {
         this.score = score;
         this.gameStatus = gameStatus;
         this.questionNumber = questionNumber;
-        this.timer = timer;
+        this.timer = System.currentTimeMillis();
     }
 
     public void answerQuestion(int answerIndex, Question question) {
         long elapsedTime = System.currentTimeMillis() - this.getTimer();
         this.timer = System.currentTimeMillis();
-
         if (answerIndex == question.getCorrectSolIndex()) {
-            this.setScore((int) (this.score + 10000 / elapsedTime));
+            Difficulty difficulty = question.getDifficulty();
+            switch (difficulty) {
+                case EASY:
+                    this.score += (10000 / (int) elapsedTime) + 3;
+                    break;
+                case INTERMEDIATE:
+                    this.score += (10000 / (int) elapsedTime) + 7;
+                    break;
+                case DIFFICULT:
+                    this.score += (10000 / (int) elapsedTime) + 10;
+                    break;
+            }
             this.questionNumber++;
         } else {
             this.gameStatus = false;
@@ -44,12 +54,12 @@ public class Player {
         return this.score;
     }
 
-    public boolean isGameStatus() {
-        return gameStatus;
-    }
-
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public boolean isGameStatus() {
+        return gameStatus;
     }
 
     public long getTimer() {

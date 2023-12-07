@@ -1,9 +1,26 @@
+<%@page import="com.Loader"%>
+<%@page import="java.io.IOException"%>
 <%@page import="com.Player"%>
 <%@page import="java.util.List"%>
 <%@ page import="com.Quiz, com.Question" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+<%
+    Cookie[] cookies = request.getCookies();
+    boolean sessionCookieFound = false;
+    for (Cookie cookie : cookies) {
+        if (cookie.getName().equals("sessionCookie")) {
+            sessionCookieFound = true;
+        }
+    }
+
+    if (!sessionCookieFound) {
+        response.sendRedirect("/MP5Session/index.jsp");
+    } else {
+         Loader.loadGameProgress(request, session);
+    }
+%>
 
 <html>
     <head>

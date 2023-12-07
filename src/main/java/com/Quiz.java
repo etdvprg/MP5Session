@@ -1,8 +1,9 @@
 package com;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-public class Quiz {
+public class Quiz implements Serializable {
     public List<Question> questions;
     private int currentQuestionIndex;
     
@@ -21,6 +22,8 @@ public class Quiz {
     
     public void nextQuestion() {
         currentQuestionIndex++;
+        System.out.println("Current question index: " + currentQuestionIndex);
+
     }
 
     public int getCurrentQuestionIndex() {
@@ -30,5 +33,14 @@ public class Quiz {
     public List<Question> getQuiz() {
         return questions;
     }
-
+    
+    
+    @Override
+    public String toString() {
+        return "Quiz{"
+                + "questions=" + questions
+                + ", currentQuestionIndex=" + currentQuestionIndex
+                + '}';
+    }
+    
 }
