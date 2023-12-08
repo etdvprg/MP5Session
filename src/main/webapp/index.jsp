@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="wrapper">
-            <header class="header"><h1>Time-travel Geogiggle Quizt!</h1></header>
+            <header class="header"><h1>Past and Maps Quizt!</h1></header>
             <div class="log-form">
                 <div class="enter-game">
                     <form action="/MP5Session/com/AuthenticationServlet" method="POST">
