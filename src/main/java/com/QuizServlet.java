@@ -45,8 +45,6 @@ public class QuizServlet extends HttpServlet {
         session.setAttribute("player", player);
         session.setAttribute("quiz", quiz);
         
-        saveGameProgress(player, quiz, response);
-
 
         if (currentQuestion.verifyAnswer(userAnswerIndex) == false) {
             leaderboard.addPlayer(player);

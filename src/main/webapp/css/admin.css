@@ -37,16 +37,12 @@ h1 {
 }
 
 .go-delete {
-    background-color: #f44336;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    background-image: url('/MP5Session/image/x.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     cursor: pointer;
+    border: none;
 }
 
 .admin-out {

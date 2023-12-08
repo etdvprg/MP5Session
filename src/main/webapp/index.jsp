@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href= "/MP5Session/css/index.css" />
-        <title>Time-Travel GeoGiggly Quizt</title>
+        <title>Past and Maps Quizt!</title>
     </head>
     <body>
         <div class="wrapper">

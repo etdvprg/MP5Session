@@ -33,7 +33,7 @@
                         <td>
                             <form action="/MP5Session/com/LeaderboardServlet" method="POST">
                                 <input type="hidden" name="selectedPlayers" value="<%= player.getUsername()%>">
-                                <input class="go-delete" type="submit" value="Delete <%= player.getUsername()%>" onclick="return confirm('Are you sure you want to delete <%= player.getUsername()%>?')">
+                                <input class="go-delete" type="submit" value="" onclick="return confirm('Are you sure you want to delete <%= player.getUsername()%>?')">
                             </form>
                         </td>
                     </tr>
