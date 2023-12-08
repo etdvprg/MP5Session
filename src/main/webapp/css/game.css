@@ -58,6 +58,7 @@ h2 {
     justify-content: center;
     line-height: 1;
     margin: 0;
+    padding: 10px;
     outline: none;
     padding: 1rem 1.2rem;
     text-align: center;
@@ -74,7 +75,7 @@ h2 {
 }
 
 .quiz-form {
-    min-height: 500px;
+    min-height: 350px;
     min-width: 500px;
     display: flex;
     flex-direction: column;

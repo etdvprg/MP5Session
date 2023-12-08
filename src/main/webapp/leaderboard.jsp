@@ -40,7 +40,6 @@
                             <form action="/MP5Session/com/AdminServlet" method="GET">
                                 <button class="go-admin" type="submit">Admin!</button>
                             </form>
-
                             <a href="/MP5Session/index.jsp"><button class="go-return">Return to Homepage!</button></a>
                 </div>
             </div>
