@@ -27,7 +27,7 @@
         <servlet-class>com.AdminServlet</servlet-class>
         <init-param>
             <param-name>admin</param-name>
-            <param-value>sudo</param-value>
+            <param-value>superuser_$ud0</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
