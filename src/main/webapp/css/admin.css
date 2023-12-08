@@ -53,21 +53,8 @@ h1 {
 
 .admin-out {
     margin-top: 20px;
-}
 
-.go-admin {
-    background-color: #008CBA;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
 }
-
 .login-form {
     margin-top: 20px;
 }
@@ -97,7 +84,7 @@ h1 {
     cursor: pointer;
 }
 
-.go-return {
+.go-return, .go-admin {
     background-color: #008CBA;
     border: none;
     color: white;
@@ -109,4 +96,3 @@ h1 {
     margin: 4px 2px;
     cursor: pointer;
 }
-

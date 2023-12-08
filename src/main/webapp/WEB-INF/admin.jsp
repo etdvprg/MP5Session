@@ -53,15 +53,17 @@
             } else {
             %>
             <div class="login-form">
+                
                 <form action="/MP5Session/com/AdminServlet" method="POST">
                     <label for="username">Username:</label><br>
                     <input type="text" id="username" name="username"><br>
-                    <input type="submit" value="Login">
+                    <input class="admin-in" type="submit" value="Login">
                 </form>
+                <br>
+                <a href="/MP5Session/leaderboard.jsp"><button class="go-return">Return</button></a>
+                
             </div>
-            
-            <a href="/MP5Session/leaderboard.jsp"><button class="go-return">Return</button></a>
-            
+                        
             <%
                 }
             %>
