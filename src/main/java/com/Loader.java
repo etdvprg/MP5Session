@@ -1,14 +1,33 @@
 package com;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Base64;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class Loader {
+
+public static void saveGameProgress(Player player, Quiz quiz, HttpServletResponse response) throws IOException {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bos);
+        oos.writeObject(quiz);
+        String quizSerialized = Base64.getEncoder().encodeToString(bos.toByteArray());
+
+        String gameProgress = player.getUsername() + "," + player.getScore() + "," + player.isGameStatus() + ","
+                + player.getQuestionNumber() + "," + (quiz.getCurrentQuestionIndex() + 1) + "," + quizSerialized;
+
+        Cookie gameProgressCookie = new Cookie("gameProgressCookie", gameProgress);
+        gameProgressCookie.setHttpOnly(false);
+        gameProgressCookie.setPath("/");
+        gameProgressCookie.setMaxAge(60 * 60 * 24);
+        response.addCookie(gameProgressCookie);
+    }
     
     public static void loadGameProgress(HttpServletRequest request, HttpSession session) throws IOException, ClassNotFoundException {
         Cookie[] loadCookies = request.getCookies();
