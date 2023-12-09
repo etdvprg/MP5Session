@@ -87,7 +87,7 @@ public class QuestionBank extends HttpServlet {
         quizManager.addQuestion("Who is known as the 'Father of Algebra'?", Arrays.asList("Euclid", "Pythagoras", "Diopanthus", "Al-Khwarizmi"), 3, Difficulty.DIFFICULT);
         quizManager.addQuestion("Who is often referred to as 'The Black Napoleon' and played a pivotal role in the Haitian Revolution?", Arrays.asList("François-Dominique Toussaint", "Toussaint L'Ouverture", "Henri Christophe", "Jean-Jacques Dessalines"), 1, Difficulty.DIFFICULT);
         quizManager.addQuestion("Which Central American country experienced a civil war that lasted from 1979 to 1992, involving conflicts between the government forces and leftist rebels, with significant involvement from the United States and the Soviet Union?", Arrays.asList("Nicaragua", "Guatemala", "El Salvador", "Honduras"), 2, Difficulty.DIFFICULT);
-        quizManager.addQuestion("Which European political figures is not a descendant of Queen Victoria?", Arrays.asList("Kaiser Wilhelm II", "Franz Josef I", "Czar Nicholas II", "King George V"), 1, Difficulty.DIFFICULT);
+        quizManager.addQuestion("Which European political figure is not a descendant of Queen Victoria?", Arrays.asList("Kaiser Wilhelm II", "Franz Josef I", "King Felipe VI", "King George V"), 1, Difficulty.DIFFICULT);
         quizManager.addQuestion("Which language did not derive from Latin?", Arrays.asList("Romanian", "Basque", "Dalmatian", "Occitan"), 1, Difficulty.DIFFICULT);
 
     } 
