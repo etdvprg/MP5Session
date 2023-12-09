@@ -92,9 +92,8 @@ public class QuizServlet extends HttpServlet {
                     cookie.setMaxAge(0);
                     
                     response.addCookie(cookie);
-                    System.out.println("Successfully deleted cookie: " + cookie.getName());
                 } else {
-                    System.out.println("No cookie detected, cookie unmatched.");
+                    
                 }
             }
         }
