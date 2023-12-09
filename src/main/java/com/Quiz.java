@@ -22,8 +22,6 @@ public class Quiz implements Serializable {
     
     public void nextQuestion() {
         currentQuestionIndex++;
-        System.out.println("Current question index: " + currentQuestionIndex);
-
     }
 
     public int getCurrentQuestionIndex() {
